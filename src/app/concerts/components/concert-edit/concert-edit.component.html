@@ -1,0 +1,57 @@
+<form *ngIf="formGroup" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="title">Title <span class="text-danger">*</span></label>
+    <input formControlName="title" type="text" class="form-control" id="title" placeholder="Enter title">
+    <ng-container *ngIf="formGroup.get('title')?.invalid && formGroup.get('title')?.touched">
+      <small *ngIf="formGroup.get('title')?.errors?.['required']" class="form-text text-danger">This field is
+        required</small>
+      <small *ngIf="formGroup.get('title')?.errors?.['minlength']" class="form-text text-danger">The minimum length
+        is {{formGroup.get('title')?.errors?.['minlength'].requiredLength}}</small>
+    </ng-container>
+  </div>
+
+  <div class="form-group">
+    <label for="powerup">Power Up <span class="text-danger">*</span></label>
+    <select formControlName="powerupId" class="form-control" id="powerup">
+      <option *ngFor="let powerup of powerups" [value]="powerup.id">{{powerup.title}}</option>
+    </select>
+    <ng-container *ngIf="formGroup.get('powerupId')?.invalid && formGroup.get('powerupId')?.touched">
+      <small *ngIf="formGroup.get('powerupId')?.errors?.['required']" class="form-text text-danger">This field is
+        required</small>
+    </ng-container>
+  </div>
+
+  <div class="form-group">
+    <label for="location">Location <span class="text-danger">*</span></label>
+    <select formControlName="location" class="form-control" id="location">
+      <option value="Berlin">Berlin</option>
+      <option value="London">London</option>
+      <option value="Paris">Paris</option>
+      <option value="Sofia">Sofia</option>
+    </select>
+    <ng-container *ngIf="formGroup.get('location')?.invalid && formGroup.get('location')?.touched">
+      <small *ngIf="formGroup.get('location')?.errors?.['required']" class="form-text text-danger">This field is
+        required</small>
+    </ng-container>
+  </div>
+
+  <div class="form-group">
+    <label for="image">Image URL</label>
+    <input formControlName="image" type="text" class="form-control" id="image" placeholder="Enter image URL">
+    <ng-container *ngIf="formGroup.get('image')?.invalid && formGroup.get('image')?.touched">
+      <small *ngIf="formGroup.get('image')?.errors?.['required']" class="form-text text-danger">This field is
+        required</small>
+    </ng-container>
+  </div>
+
+  <div class="form-group">
+    <input formControlName="hasPassed" type="checkbox" class="form-checkbox-input mr-2" id="hasPassed">
+    <label class="form-check-label" for="hasPassed">Has Finished</label>
+  </div>
+
+
+  <div class="mt-2">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+
+</form>

@@ -1,0 +1,52 @@
+{
+  "powerups": [
+    {
+      "lastDateModified": "2022-06-10T21:09:44.306Z",
+      "credits": 150,
+      "description": "You can claim a beer from the lounge with this power up.",
+      "title": "Free bottle of beer",
+      "id": 1
+    },
+    {
+      "lastDateModified": "2022-06-10T21:10:16.404Z",
+      "credits": 100,
+      "description": "You can claim a free soft drink from the lounge.",
+      "title": "Soft drink",
+      "id": 2
+    },
+    {
+      "lastDateModified": "2022-10-18T13:02:12.565Z",
+      "credits": 45,
+      "description": "You get a pumpkin spice latte!",
+      "title": "Free pumpkin",
+      "id": 3
+    },
+    {
+      "lastDateModified": "2022-10-18T13:09:19.416Z",
+      "credits": 500,
+      "description": "You get milk",
+      "title": "BBC",
+      "id": 4
+    }
+  ],
+  "concerts": [
+    {
+      "title": "Rock-Fest 2020 Changed",
+      "powerupId": "1",
+      "location": "Berlin",
+      "image": "https://image.shutterstock.com/shutterstock/photos/588042173/display_1500/stock-vector-rock-sign-gesture-for-music-festival-logo-illustration-on-a-white-background-588042173.jpg",
+      "date": "2022-06-10T21:17:41.748Z",
+      "id": 2,
+      "hasPassed": true
+    },
+    {
+      "title": "Halloween party",
+      "powerupId": "3",
+      "location": "London",
+      "image": "https://i.scdn.co/image/ab67706f00000003ccdc54c2ccc7670b0e10c2b7",
+      "hasPassed": false,
+      "date": "2022-10-18T13:01:05.390Z",
+      "id": 5
+    }
+  ]
+}

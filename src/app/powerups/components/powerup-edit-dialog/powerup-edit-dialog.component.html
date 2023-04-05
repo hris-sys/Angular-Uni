@@ -1,0 +1,56 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">
+      {{ powerup.id ? "Edit" : "Create" }} Power-up
+    </h4>
+    <button type="button" (click)="hideDialog()" class="btn-close close pull-right" aria-label="Close">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="title">Title <span class="text-danger">*</span></label>
+      <input formControlName="title" type="text" class="form-control" id="title" placeholder="Enter title" />
+      <ng-container *ngIf="
+          formGroup.get('title')?.invalid && formGroup.get('title')?.touched
+        ">
+        <small *ngIf="formGroup.get('title')?.errors?.['required']" class="form-text text-danger">This field is
+          required</small>
+        <small *ngIf="formGroup.get('title')?.errors?.['minlength']" class="form-text text-danger">The minimum length is
+          {{formGroup.get('title')?.errors?.['minlength'].requiredLength}}</small>
+      </ng-container>
+
+      <br>
+      <label for="credits">Credits <span class="text-danger">*</span></label>
+      <input formControlName="credits" type="number" class="form-control" id="credits"
+        placeholder="Enter amount of credits for the power up" />
+      <ng-container *ngIf="
+          formGroup.get('credits')?.invalid && formGroup.get('credits')?.touched
+        ">
+        <small *ngIf="formGroup.get('credits')?.errors?.['required']" class="form-text text-danger">This field is
+          required</small>
+        <small *ngIf="formGroup.get('credits')?.errors?.['min']" class="form-text text-danger">The minimum length
+          is {{formGroup.get('credits')?.errors?.['min'].min}}</small>
+      </ng-container>
+
+      <br>
+      <label for="description">Description <span class="text-danger">*</span></label>
+      <input formControlName="description" type="text" class="form-control" id="description"
+        placeholder="Enter the description of the power up:" />
+      <ng-container *ngIf="
+          formGroup.get('description')?.invalid && formGroup.get('description')?.touched
+        ">
+        <small *ngIf="formGroup.get('description')?.errors?.['required']" class="form-text text-danger">This field is
+          required</small>
+        <small *ngIf="formGroup.get('description')?.errors?.['minlength']" class="form-text text-danger">The minimum length for a description
+          is {{formGroup.get('description')?.errors?.['minlength'].requiredLength}}</small>
+      </ng-container>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" (click)="hideDialog()" class="btn btn-default">
+      Cancel
+    </button>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </div>
+</form>

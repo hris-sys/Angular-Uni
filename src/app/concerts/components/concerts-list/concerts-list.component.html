@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-between mt-2">
+  <h3>Concerts</h3>
+  <div>
+    <a routerLink="create" class="btn btn-primary">Create</a>
+  </div>
+</div>
+<div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Power up</th>
+      <th>Location</th>
+      <th>Has Finished</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let concert of concerts">
+      <td>{{concert.id}}</td>
+      <div class="concert-summary">
+        <div class="concert-image-container">
+          <img [src]="concert.image" [alt]="concert.title">
+        </div>
+      </div>
+      <td>
+        <div class="concert-titles-container">
+          <span class="concert-title">{{concert.title}}</span>
+        </div>
+      </td>
+      <td>{{concert.date | date}}</td>
+      <td>{{concert.powerup.title}}</td>
+      <td>{{concert.location}}</td>
+      <td>
+        <ng-container *ngIf="concert.hasPassed">
+          <small>The concert has finished!</small>
+        </ng-container>
+      </td>
+      <td>
+        <button (click)="onEditClick(concert)"
+                class="btn btn-sm btn-outline-primary">Edit
+        </button>
+        <button (click)="onDeleteClick(concert)"
+                class="btn btn-sm btn-outline-danger ms-2">Delete
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

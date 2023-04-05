@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left">Delete powerup?</h4>
+    <button type="button" (click)="hideDialog()"
+            class="btn-close close pull-right" aria-label="Close">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Are you sure you want to delete powerup "{{powerup.title}}"?</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" (click)="hideDialog()">Cancel</button>
+    <button type="button" class="btn btn-danger" (click)="deletePowerup()">Delete</button>
+  </div>
+  

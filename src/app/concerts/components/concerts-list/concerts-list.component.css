@@ -1,0 +1,18 @@
+.concert-summary {
+    display: flex;
+}
+.concert-summary .concert-image-container {
+    width: 80px;
+    height: 45px;
+}
+.concert-summary .concert-image-container img {
+    width: 100%;
+    height: 100%;
+}
+.concert-summary .concert-titles-container {
+    margin-left: 12px;
+}
+.concert-summary .concert-titles-container .concert-title {
+    display: block;
+    font-weight: bold;
+}

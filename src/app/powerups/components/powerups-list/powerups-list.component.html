@@ -1,0 +1,36 @@
+<div class="d-flex justify-content-between mt-2">
+    <h3>Power-Ups</h3>
+    <div>
+      <button (click)="onCreateClick()" class="btn btn-primary">Create</button>
+    </div>  
+</div>
+  <div>
+    <table class="table">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Credits</th>
+        <th>Description</th>
+        <th>Last Updated</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let powerup of powerups">
+        <td>{{powerup.id}}</td>
+        <td>{{powerup.title}}</td>
+        <td>{{powerup.credits | number}}</td>
+        <td>{{powerup.description}}</td>
+        <td>{{powerup.lastDateModified | date}}</td>
+        <td><button (click)="onEditClick(powerup)"
+          class="btn btn-sm btn-outline-primary">Edit
+  </button>
+  <button (click)="onDeleteClick(powerup)"
+          class="btn btn-sm btn-outline-danger ms-2">Delete
+  </button>
+</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  
